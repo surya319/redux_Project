@@ -9,7 +9,7 @@ export default function Login() {
         onClick={() =>
           dispatch(
             login({
-              name: "Surya G",
+              name: "Surya Gunasekaran",
               age: 24,
               email: "suryagunasekaran24@gmail.com",
             })
