@@ -11,7 +11,7 @@ export default function Login() {
             login({
               name: "Surya G",
               age: 24,
-              email: "surya@gmail.com",
+              email: "suryagunasekaran24@gmail.com",
             })
           )
         }
