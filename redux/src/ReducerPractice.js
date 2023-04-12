@@ -4,7 +4,7 @@ export default function ReducerPractice() {
   const [data, setData] = useState({
     name: "",
     age: null,
-    email: ""
+    email: "",
   });
   const nameRef = useRef();
   const ageRef = useRef();
@@ -16,8 +16,10 @@ export default function ReducerPractice() {
     switch (action) {
       case "Update":
         return { name: data.name, age: data.age, email: data.email };
-      default:
+      case "Reset":
         return { name: "", age: null, email: "" };
+      default:
+        throw new Error();
     }
   };
 
@@ -41,8 +43,8 @@ export default function ReducerPractice() {
       <div>Age : {iniState.age}</div>
       <div>Email: {iniState.email}</div>
       <input type="text" name="name" onChange={handleChange} ref={nameRef} />
-      <input type="number" name="age" onChange={handleChange} ref={ageRef}/>
-      <input type="email" name="email" onChange={handleChange} ref={emailRef}/>
+      <input type="number" name="age" onChange={handleChange} ref={ageRef} />
+      <input type="email" name="email" onChange={handleChange} ref={emailRef} />
       <div>
         <button onClick={handleSubmit}>Submit</button>
         <button onClick={() => dispatch("Reset")}>Reset</button>
