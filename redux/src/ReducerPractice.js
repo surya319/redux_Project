@@ -6,12 +6,12 @@ export default function ReducerPractice() {
     age: null,
     email: ""
   });
-  const initialState = {
-    data,
-  };
   const nameRef = useRef();
   const ageRef = useRef();
   const emailRef = useRef();
+  const initialState = {
+    data,
+  };
   const reducerFun = (state, action) => {
     switch (action) {
       case "Update":
