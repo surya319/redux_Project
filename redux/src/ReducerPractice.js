@@ -4,7 +4,7 @@ export default function ReducerPractice() {
   const [data, setData] = useState({
     name: "",
     age: null,
-    email: "",
+    email: ""
   });
   const initialState = {
     data,
