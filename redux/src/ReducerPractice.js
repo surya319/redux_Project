@@ -10,6 +10,8 @@ export default function ReducerPractice() {
     switch (action) {
       case "Update":
         return { name: "surya", age: 24, email: "surya@gmail.com" };
+      case "Reset":
+        return initialState
       default:
         return state;
     }
@@ -24,6 +26,7 @@ export default function ReducerPractice() {
       <button onClick={() => dispatch("Decrement")}>Decrement</button>
       <button onClick={() => dispatch("Reset")}>Reset</button> */}
       <button onClick={() => dispatch("Update")}>GetDetails</button>
+      <button onClick={() => dispatch("Reset")}>Reset</button>
     </div>
   );
 }
