@@ -4,18 +4,23 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { configureStore } from "@reduxjs/toolkit";
-import { Provider } from "react-redux";
+// import { Provider } from "react-redux";
+import { createContext } from 'react';
 import userReducer from "./userReducer";
 const store = configureStore({
   reducer: { userReducer },
 });
 
+
+export const MyContext = createContext();
+const texter = "surya gunasekaran"
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <MyContext.Provider store={store} value={texter}>
       <App />
-    </Provider>
+    </MyContext.Provider>
   </React.StrictMode>
 );
 

@@ -1,6 +1,9 @@
-import React, { useReducer, useRef, useState } from "react";
+import React, { useContext, useReducer, useRef, useState } from "react";
+import { MyContext } from ".";
+
 
 export default function ReducerPractice() {
+  const texter = useContext(MyContext);
   const [data, setData] = useState({
     name: "",
     age: null,
@@ -12,6 +15,7 @@ export default function ReducerPractice() {
   const initialState = {
     data,
   };
+ 
   const reducerFun = (state, action) => {
     switch (action) {
       case "Update":
@@ -39,6 +43,7 @@ export default function ReducerPractice() {
   const [iniState, dispatch] = useReducer(reducerFun, initialState.data);
   return (
     <div>
+      {texter}
       <div>Name :{iniState.name}</div>
       <div>Age : {iniState.age}</div>
       <div>Email: {iniState.email}</div>
